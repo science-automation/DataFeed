@@ -6,4 +6,9 @@ parameters:
 
 steps:
   - ${{ each p in parameters.param}}:
-      - script: 'echo ${{ p }}'
+      - script: |
+          echo ${{ p }}
+          cp /home/vsts/work/1/s/postalcodes/${{ p }}.zip $(System.DefaultWorkingDirectory)/${{ p }}
+        displayName: 'Run synthea for country'
+      - publish: $(System.DefaultWorkingDirectory)/${{ p }}
+        artifact: ${{ p }}_postalcode
