@@ -3,6 +3,13 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+resources:
+  repositories:
+    - repository: postalcodes
+      type: github
+      endpoint: science-automation
+      name: science-automation/postalcodes
+
 trigger:
 - master
 
@@ -11,8 +18,11 @@ pool:
 
 steps:
 - checkout: self
+- checkout: postalcodes
 - script: |
-    pwd
-    wget http://download.geonames.org/export/zip/NO.zip
+    cd /home/vsts/work/1/s/postalcodes
     ls
-  displayName: 'Build Synthea for country'
+  displayName: 'check we have postalcodes'
+- template: artifact.yaml
+  parameters:
+    param["a","b"]

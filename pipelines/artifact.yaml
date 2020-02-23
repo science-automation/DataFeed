@@ -1,0 +1,9 @@
+#
+# test looping
+#
+parameters:
+  param: []
+
+steps:
+  - ${{ each p in parameters.param}}:
+      - script: 'echo ${{ p }}'
