@@ -25,4 +25,4 @@ steps:
   displayName: 'check we have postalcodes'
 - template: artifact.yaml
   parameters:
-  | param: ["a","b"]
+    param: ["a","b"]
