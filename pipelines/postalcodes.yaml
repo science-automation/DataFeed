@@ -16,6 +16,7 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+# NOTE: we dont have zip files for gr
 steps:
 - checkout: self
 - checkout: postalcodes
@@ -25,4 +26,4 @@ steps:
   displayName: 'check we have postalcodes'
 - template: artifact.yaml
   parameters:
-    param: ["ua", "fr", "es", "se", "de", "fi", "no", "pl", "it", "gb", "ro", "by", "gr", "bg", "is", "pt", "cz", "dk", "hu", "rs", "at", "ie", "lt", "lv", "hr", "ba", "sk", "ee", "nl", "ch", "md", "be", "al", "mk", "si", "me", "cy", "lu", "fo", "ad", "mt", "li", "gg", "sm", "gi", "mc", "va"]
+    param: ["ua", "fr", "es", "se", "de", "fi", "no", "pl", "it", "gb", "ro", "by", "bg", "is", "pt", "cz", "dk", "hu", "rs", "at", "ie", "lt", "lv", "hr", "ba", "sk", "ee", "nl", "ch", "md", "be", "al", "mk", "si", "me", "cy", "lu", "fo", "ad", "mt", "li", "gg", "sm", "gi", "mc", "va"]
