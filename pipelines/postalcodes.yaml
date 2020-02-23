@@ -24,5 +24,5 @@ steps:
     ls
   displayName: 'check we have postalcodes'
 - template: artifact.yaml
-  parameters: |
-    param["a","b"]
+  parameters:
+  | param: ["a","b"]
